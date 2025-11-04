@@ -1,0 +1,34 @@
+# WordPress
+*.log
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.bak
+*.old
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Update server (don't include in plugin zip)
+update-server/downloads/
+update-server/*.zip
+
+# Development files
+node_modules/
+package-lock.json
+composer.lock

@@ -1,0 +1,886 @@
+/**
+ * Smart Photo Gallery Pro - Frontend Styles
+ * HH CJ Google Photos
+ */
+
+/* Gallery Container */
+.spgp-gallery-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Category Wise Albums */
+.spgp-category-filter {
+    margin-bottom: 40px;
+}
+
+.spgp-category-filter h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 600;
+}
+
+.spgp-category-album {
+    margin-bottom: 50px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 15px;
+}
+
+.spgp-category-album h4 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.spgp-category-album h4 span {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+}
+
+.spgp-album-grid {
+    column-count: 3;
+    column-gap: 20px;
+    margin-bottom: 20px;
+}
+
+.spgp-view-all {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.spgp-view-all .spgp-btn {
+    padding: 12px 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    display: inline-block;
+    transition: transform 0.3s;
+}
+
+.spgp-view-all .spgp-btn:hover {
+    transform: translateY(-2px);
+    color: white;
+}
+
+/* Single Photo Overlay Styles */
+.spgp-single-photo-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: #000;
+}
+
+.spgp-overlay-background {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    filter: brightness(0.7);
+}
+
+.spgp-overlay-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.spgp-overlay-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.3s;
+}
+
+.spgp-overlay-close:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.spgp-nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 36px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10001;
+    transition: background 0.3s;
+}
+
+.spgp-nav-arrow:hover {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+}
+
+.spgp-nav-prev {
+    left: 30px;
+}
+
+.spgp-nav-next {
+    right: 30px;
+}
+
+.spgp-overlay-image {
+    max-width: 90%;
+    max-height: 80vh;
+    margin: 0 auto;
+}
+
+.spgp-overlay-image img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.spgp-overlay-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.7), transparent);
+    padding: 40px;
+    color: white;
+}
+
+.spgp-overlay-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.spgp-overlay-description {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+.spgp-overlay-meta {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.spgp-overlay-meta-item {
+    display: flex;
+    gap: 10px;
+}
+
+.spgp-overlay-meta-item strong {
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.spgp-overlay-actions {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.spgp-overlay-btn {
+    padding: 12px 24px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spgp-overlay-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.spgp-btn-icon {
+    font-size: 18px;
+}
+
+.spgp-related-section {
+    padding: 60px 20px;
+    background: #f9f9f9;
+    margin-top: 100vh;
+}
+
+.spgp-related-section h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+}
+
+.spgp-related-grid {
+    column-count: 4;
+    column-gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .spgp-overlay-title {
+        font-size: 24px;
+    }
+    
+    .spgp-overlay-description {
+        font-size: 14px;
+    }
+    
+    .spgp-overlay-info {
+        padding: 20px;
+    }
+    
+    .spgp-overlay-actions {
+        flex-direction: column;
+    }
+    
+    .spgp-overlay-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .spgp-nav-arrow {
+        width: 50px;
+        height: 50px;
+        font-size: 28px;
+    }
+    
+    .spgp-nav-prev {
+        left: 10px;
+    }
+    
+    .spgp-nav-next {
+        right: 10px;
+    }
+    
+    .spgp-related-grid {
+        column-count: 2;
+    }
+}
+
+/* Search Bar */
+.spgp-search-container {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.spgp-search-form {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.spgp-search-field {
+    flex: 1;
+    min-width: 200px;
+}
+
+.spgp-search-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #333;
+}
+
+.spgp-search-field input,
+.spgp-search-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.spgp-search-field input[type="date"] {
+    padding: 9px;
+}
+
+.spgp-search-button {
+    padding: 10px 20px;
+    background: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.spgp-search-button:hover {
+    background: #005177;
+}
+
+/* Masonry Grid */
+.spgp-gallery-masonry {
+    margin: 0 auto;
+    column-gap: 15px;
+    row-gap: 15px;
+}
+
+.spgp-gallery-masonry[data-columns="2"] {
+    column-count: 2;
+}
+
+.spgp-gallery-masonry[data-columns="3"] {
+    column-count: 3;
+}
+
+.spgp-gallery-masonry[data-columns="4"] {
+    column-count: 4;
+}
+
+.spgp-gallery-masonry[data-columns="5"] {
+    column-count: 5;
+}
+
+.spgp-gallery-item {
+    break-inside: avoid;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f0f0f0;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spgp-gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.spgp-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 0.3s;
+}
+
+.spgp-gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.spgp-gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    padding: 15px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.spgp-gallery-item:hover .spgp-gallery-item-overlay {
+    opacity: 1;
+}
+
+.spgp-gallery-item-title {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.spgp-gallery-item-meta {
+    font-size: 12px;
+    opacity: 0.9;
+}
+
+/* Regular Grid Layout */
+.spgp-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.spgp-gallery-grid .spgp-gallery-item {
+    margin-bottom: 0;
+    aspect-ratio: 1;
+}
+
+.spgp-gallery-grid .spgp-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Loading Spinner */
+.spgp-loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 16px;
+    color: #666;
+}
+
+.spgp-loading::after {
+    content: '...';
+    animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60%, 100% { content: '...'; }
+}
+
+/* Load More Button */
+.spgp-load-more {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.spgp-load-more-button {
+    padding: 12px 30px;
+    background: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.spgp-load-more-button:hover {
+    background: #005177;
+}
+
+.spgp-load-more-button:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Lightbox Styles */
+.spgp-lightbox-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.spgp-lightbox-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.spgp-lightbox-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+    opacity: 0.9;
+}
+
+.spgp-lightbox-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.spgp-lightbox-button {
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.spgp-lightbox-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+/* Upload Form */
+.spgp-upload-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.spgp-upload-field {
+    margin-bottom: 20px;
+}
+
+.spgp-upload-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.spgp-upload-field input[type="text"],
+.spgp-upload-field input[type="date"],
+.spgp-upload-field textarea,
+.spgp-upload-field select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.spgp-upload-field textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.spgp-upload-field input[type="file"] {
+    padding: 8px;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    background: white;
+}
+
+.spgp-upload-preview {
+    margin-top: 10px;
+    max-width: 300px;
+}
+
+.spgp-upload-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.spgp-upload-submit {
+    padding: 12px 30px;
+    background: #0073aa;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.spgp-upload-submit:hover {
+    background: #005177;
+}
+
+.spgp-upload-submit:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* Categories/Tags */
+.spgp-categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.spgp-category-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background: #0073aa;
+    color: white;
+    border-radius: 20px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.spgp-category-tag:hover {
+    background: #005177;
+    color: white;
+}
+
+/* Dark Mode */
+.spgp-dark-mode .spgp-gallery-wrapper {
+    background: #1a1a1a;
+    color: #e0e0e0;
+}
+
+.spgp-dark-mode .spgp-search-container {
+    background: #2a2a2a;
+}
+
+.spgp-dark-mode .spgp-search-field input,
+.spgp-dark-mode .spgp-search-field select {
+    background: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+.spgp-dark-mode .spgp-upload-form {
+    background: #2a2a2a;
+}
+
+.spgp-dark-mode .spgp-upload-field input,
+.spgp-dark-mode .spgp-upload-field textarea,
+.spgp-dark-mode .spgp-upload-field select {
+    background: #333;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .spgp-gallery-masonry[data-columns="3"],
+    .spgp-gallery-masonry[data-columns="4"],
+    .spgp-gallery-masonry[data-columns="5"] {
+        column-count: 2;
+    }
+    
+    .spgp-gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    
+    .spgp-search-form {
+        flex-direction: column;
+    }
+    
+    .spgp-search-field {
+        width: 100%;
+    }
+    
+    .spgp-lightbox-title {
+        font-size: 18px;
+    }
+    
+    .spgp-lightbox-actions {
+        flex-direction: column;
+    }
+    
+    .spgp-lightbox-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .spgp-gallery-masonry[data-columns="2"],
+    .spgp-gallery-masonry[data-columns="3"],
+    .spgp-gallery-masonry[data-columns="4"],
+    .spgp-gallery-masonry[data-columns="5"] {
+        column-count: 1;
+    }
+    
+    .spgp-gallery-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Related Photos */
+.spgp-related-photos {
+    margin-top: 40px;
+    padding-top: 40px;
+    border-top: 1px solid #ddd;
+}
+
+.spgp-related-photos-title {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.spgp-related-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+/* Single Photo Page */
+.spgp-single-photo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.spgp-single-photo-image {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.spgp-single-photo-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.spgp-single-photo-meta {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.spgp-single-photo-content h1 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.spgp-single-photo-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.spgp-single-photo-info-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.spgp-single-photo-info-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.spgp-single-photo-info-label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.spgp-single-photo-info-value {
+    color: #333;
+}
+
+/* Modal */
+.spgp-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.spgp-modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+.spgp-modal-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.spgp-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+}
+
+.spgp-modal-close:hover,
+.spgp-modal-close:focus {
+    color: #fff;
+}
+
+/* Empty State */
+.spgp-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: #666;
+}
+
+.spgp-empty-state-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+}
+
+.spgp-empty-state-message {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.spgp-empty-state-description {
+    font-size: 14px;
+    opacity: 0.7;
+}
