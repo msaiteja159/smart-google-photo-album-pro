@@ -344,3 +344,19 @@ class Smart_Photo_Gallery_Pro {
 
 // Initialize plugin
 Smart_Photo_Gallery_Pro::get_instance();
+// === GitHub Auto-Updater ===
+if ( ! class_exists( 'Puc_v4_Factory' ) ) {
+    require_once plugin_dir_path( __FILE__ ) . 'plugin-update-checker/plugin-update-checker.php';
+}
+
+$updateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/msaiteja159/smart-google-photo-album-pro/',
+    __FILE__,
+    'smart-photo-gallery-pro'
+);
+
+// Optional: if you’re using a private repo, set access token
+// $updateChecker->setAuthentication('your_github_token');
+
+// Optional: specify branch if not "main"
+$updateChecker->setBranch('main');
